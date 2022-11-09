@@ -28,7 +28,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
    
-    @CrossOrigin(origins="http://localhost:4200")
+    @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
     @PostMapping("/")
     public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception {
         
