@@ -48,7 +48,7 @@ public class UsuarioController {
     }
     
   
-    @CrossOrigin(origins="http://localhost:4200")
+   @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
     @GetMapping("/{username}")
     public Usuario obtenerUsuario(@PathVariable("username") String username) {
         
@@ -56,7 +56,7 @@ public class UsuarioController {
     }
     
    
-    @CrossOrigin(origins="http://localhost:4200")
+     @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
     @DeleteMapping("/{usuarioId}") 
      public void eliminarUsuario(@PathVariable("usuarioId") Long usuarioId) {
          
