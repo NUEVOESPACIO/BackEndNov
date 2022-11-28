@@ -6,6 +6,7 @@ import com.sistema.examenes.entidades.UsuarioRol;
 import com.sistema.examenes.repositorios.RolRepository;
 import com.sistema.examenes.repositorios.UsuarioRepository;
 import com.sistema.examenes.servicios.UsuarioService;
+import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,6 +43,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         
         return usuarioRepository.findByUsername(username);
         
+        
     }
 
     @Override
@@ -51,6 +53,24 @@ public class UsuarioServiceImpl implements UsuarioService {
         
         
     }
+    
+    @Override
+    public List<Usuario> listadeUsuarios() {                      
+        
+        return usuarioRepository.findAll();
+        
+        
+    }
+
+    @Override
+    public Long contar() {                  
+                
+        return usuarioRepository.count();
+        
+    }
+    
+    
+    
     }    
     
     

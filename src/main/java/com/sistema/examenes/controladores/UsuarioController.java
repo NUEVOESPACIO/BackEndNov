@@ -6,6 +6,7 @@ import com.sistema.examenes.entidades.Usuario;
 import com.sistema.examenes.entidades.UsuarioRol;
 import com.sistema.examenes.servicios.UsuarioService;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,21 +16,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
 
-
 @RequestMapping("/usuarios")
 public class UsuarioController {
     
     @Autowired
-    private UsuarioService usuarioService;
-
-   
+    private UsuarioService usuarioService;   
     @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
     @PostMapping("/")
+    
     public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception {
         
         usuario.setPerfil("default.png");
@@ -49,14 +49,15 @@ public class UsuarioController {
     
   
    @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
-    @GetMapping("/{username}")
-    public Usuario obtenerUsuario(@PathVariable("username") String username) {
+   @ResponseBody
+   @GetMapping("/{username}")
+   public Usuario obtenerUsuario(@PathVariable("username") String username) {
         
         return usuarioService.obtenerUsuario(username);
-    }
+   }
     
    
-     @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
+    @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
     @DeleteMapping("/{usuarioId}") 
      public void eliminarUsuario(@PathVariable("usuarioId") Long usuarioId) {
          
@@ -65,6 +66,29 @@ public class UsuarioController {
     
     }
     
+    @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
+    @ResponseBody
+    @GetMapping("/listar") 
+     public List<Usuario> listarUsuarios() {         
+                  
+         return usuarioService.listadeUsuarios();       
+    
+    }
+     
+    @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
+    @GetMapping("/prueba") 
+     public String pruebaUsuarios() {         
+                  
+         return "hola";
+    
+    }
+     
+    @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
+    @GetMapping("/contar")
+    public Long contarUsuarios() {
+        return usuarioService.contar();
+    }
+     
      
 }
     
