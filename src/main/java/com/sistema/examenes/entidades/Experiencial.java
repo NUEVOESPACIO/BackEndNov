@@ -16,7 +16,7 @@ public class Experiencial {
     public Experiencial() {
     }
 
-    public Experiencial(Long id, String nombreEmpresa, boolean esTrabajoActual, Date fechaini, Date fechafin, String descripcion, Long persona, Long tipoempleo) {
+    public Experiencial(Long id, String nombreEmpresa, boolean esTrabajoActual, String fechaini, String fechafin, String descripcion, Long persona, Long tipoempleo) {
         this.id = id;
         this.nombreEmpresa = nombreEmpresa;
         this.esTrabajoActual = esTrabajoActual;
@@ -51,19 +51,19 @@ public class Experiencial {
         this.esTrabajoActual = esTrabajoActual;
     }
 
-    public Date getFechaini() {
+    public String getFechaini() {
         return fechaini;
     }
 
-    public void setFechaini(Date fechaini) {
+    public void setFechaini(String fechaini) {
         this.fechaini = fechaini;
     }
 
-    public Date getFechafin() {
+    public String getFechafin() {
         return fechafin;
     }
 
-    public void setFechafin(Date fechafin) {
+    public void setFechafin(String fechafin) {
         this.fechafin = fechafin;
     }
 
@@ -95,11 +95,9 @@ public class Experiencial {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id; 
     private String nombreEmpresa;
-    private boolean esTrabajoActual;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fechaini;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fechafin;
+    private boolean esTrabajoActual;    
+    private String fechaini;    
+    private String fechafin;
     private String descripcion;
     private Long persona;
     private Long tipoempleo;
