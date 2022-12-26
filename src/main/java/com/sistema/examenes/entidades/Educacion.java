@@ -10,7 +10,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Educacion")
 public class Educacion {
-     @Id
+   
+    @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id; 
     private String institucion;
