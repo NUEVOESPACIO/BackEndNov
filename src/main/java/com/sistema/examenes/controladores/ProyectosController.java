@@ -1,8 +1,8 @@
 package com.sistema.examenes.controladores;
 
-import com.sistema.examenes.entidades.Experiencial;
+
 import com.sistema.examenes.entidades.Proyectos;
-import com.sistema.examenes.servicios.ExperiencialService;
+
 import com.sistema.examenes.servicios.ProyectosService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

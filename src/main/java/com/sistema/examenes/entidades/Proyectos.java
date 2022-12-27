@@ -100,7 +100,35 @@ public class Proyectos{
     public Proyectos() {
     }
 
-    public Proyectos(Long id, String nombreProyecto, String entorno, String marco, String aprendisajeObtenido, String fechaini, String fechafin, String link, String imagen, Long persona) {
+    public String getFuncion() {
+        return funcion;
+    }
+
+    public void setFuncion(String funcion) {
+        this.funcion = funcion;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+
+    private String nombreProyecto;
+    private String entorno;    
+    private String marco;
+    private String aprendisajeObtenido;
+    private String fechaini;    
+    private String fechafin;
+    private String link;
+    private String imagen;
+    private Long persona;  
+    private String funcion;
+
+    public Proyectos(Long id, String nombreProyecto, String entorno, String marco, String aprendisajeObtenido, String fechaini, String fechafin, String link, String imagen, Long persona, String funcion, String resultado, boolean esProyectoActual) {
         this.id = id;
         this.nombreProyecto = nombreProyecto;
         this.entorno = entorno;
@@ -111,15 +139,21 @@ public class Proyectos{
         this.link = link;
         this.imagen = imagen;
         this.persona = persona;
+        this.funcion = funcion;
+        this.resultado = resultado;
+        this.esProyectoActual = esProyectoActual;
     }
-    private String nombreProyecto;
-    private String entorno;    
-    private String marco;
-    private String aprendisajeObtenido;
-    private String fechaini;    
-    private String fechafin;
-    private String link;
-    private String imagen;
-    private Long persona;        
+
+
+
+    public boolean isEsProyectoActual() {
+        return esProyectoActual;
+    }
+
+    public void setEsProyectoActual(boolean esProyectoActual) {
+        this.esProyectoActual = esProyectoActual;
+    }
+    private String resultado;
+    private boolean esProyectoActual;  
     
 }
