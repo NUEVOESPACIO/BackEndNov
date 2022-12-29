@@ -20,6 +20,14 @@ public class Skills {
         this.id = id;
     }
 
+    public Long getValor() {
+        return valor;
+    }
+
+    public void setValor(Long valor) {
+        this.valor = valor;
+    }
+
     public String getNombreskill() {
         return nombreskill;
     }
@@ -28,11 +36,11 @@ public class Skills {
         this.nombreskill = nombreskill;
     }
 
-    public boolean isTipohs() {
+    public String getTipohs() {
         return tipohs;
     }
 
-    public void setTipohs(boolean tipohs) {
+    public void setTipohs(String tipohs) {
         this.tipohs = tipohs;
     }
 
@@ -68,7 +76,7 @@ public class Skills {
         this.persona = persona;
     }
 
-    public Skills(Long id, String nombreskill, boolean tipohs, String descripcion, Long valmax, Long valor, Long persona) {
+    public Skills(Long id, String nombreskill, String tipohs, String descripcion, Long valmax, Long valor, Long persona) {
         this.id = id;
         this.nombreskill = nombreskill;
         this.tipohs = tipohs;
@@ -85,7 +93,7 @@ public class Skills {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;   
     private String nombreskill;
-    private boolean tipohs;  
+    private String tipohs;  
     private String descripcion;    
     private Long valmax ;    
     private Long valor; 
