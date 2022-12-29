@@ -127,6 +127,8 @@ public class Proyectos{
     private String imagen;
     private Long persona;  
     private String funcion;
+    private String resultado;
+    private boolean esProyectoActual;  
 
     public Proyectos(Long id, String nombreProyecto, String entorno, String marco, String aprendisajeObtenido, String fechaini, String fechafin, String link, String imagen, Long persona, String funcion, String resultado, boolean esProyectoActual) {
         this.id = id;
@@ -153,7 +155,6 @@ public class Proyectos{
     public void setEsProyectoActual(boolean esProyectoActual) {
         this.esProyectoActual = esProyectoActual;
     }
-    private String resultado;
-    private boolean esProyectoActual;  
+
     
 }
