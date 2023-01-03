@@ -36,4 +36,9 @@ public class ExperiencialServiceImpl implements ExperiencialService {
        
     }
     
+    @Override
+    public Long contarExperiencial() {
+    return experiencialRepository.count();
+    }
+    
 }

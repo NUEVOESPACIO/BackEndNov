@@ -13,4 +13,6 @@ public interface ExperiencialService {
     
     public List<Experiencial> listadeExperiencial();
     
+    public Integer contarExperiencial();
+    
 }

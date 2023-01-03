@@ -50,4 +50,14 @@ public class ExperiencialController {
          return experiencialservice.listadeExperiencial();       
     
     }
+    
+    @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
+    @ResponseBody
+    @GetMapping("/contar") 
+    
+    public Long ContarExperiencial() {         
+                  
+         return experiencialservice.contarExperiencial();
+    
+    }
 }
