@@ -11,15 +11,17 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
         @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})	
-        @PostMapping("/user")
+        @PostMapping("/")
 	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {         
             
                 if ("SebasEdit".equals(username) && "1234".equals(pwd)) {
