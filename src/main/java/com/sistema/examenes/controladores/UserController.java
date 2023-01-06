@@ -19,12 +19,26 @@ public class UserController {
 
 	@PostMapping("user")
 	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
-		
-		String token = getJWTToken(username);
+            
+            
+                
+               if ("SebasEdit".equals(username) && "1234".equals(pwd)) {  
+
+                String token = getJWTToken(username);
 		User user = new User();
 		user.setUser(username);
 		user.setToken(token);		
-		return user;
+		return user;                   
+		
+               } else {
+                String token = "";
+		User user = new User();
+		user.setUser(username);
+		user.setToken(token);		
+		return user;                   
+               
+               }
+
 		
 	}
 

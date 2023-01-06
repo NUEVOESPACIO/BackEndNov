@@ -3,6 +3,7 @@ package com.sistema.examenes.controladores;
 
 
 import com.sistema.examenes.entidades.Skills;
+import com.sistema.examenes.entidades.TipoEmpleo;
 import com.sistema.examenes.servicios.SkillsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,11 +41,12 @@ public class SkillsController {
     
     @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})
     @ResponseBody
-    @GetMapping("/listar") 
-    
+    @GetMapping("/listar")     
     public List<Skills> listarSkills() {         
                   
          return skillsservice.listadeSkills();
+         
+         
     
     
 }
