@@ -23,8 +23,7 @@ public class UserController {
 	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
             
             
-                
-               if ("SebasEdit".equals(username) && "1234".equals(pwd)) {  
+                          
 
                 String token = getJWTToken(username);
 		User user = new User();
@@ -32,14 +31,6 @@ public class UserController {
 		user.setToken(token);		
 		return user;                   
 		
-               } else {
-                String token = getJWTToken(username);
-		User user = new User();
-		user.setUser(username);
-		user.setToken(token);		
-		return user;                   
-               
-               }
 
 		
 	}
