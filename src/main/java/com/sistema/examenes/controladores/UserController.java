@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-	@PostMapping("user")
+        @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})	
+        @PostMapping("/user")
 	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
             
             
