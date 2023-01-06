@@ -20,16 +20,21 @@ public class UserController {
 
         @CrossOrigin(origins={"http://localhost:4200", "https://frontendnov.web.app"})	
         @PostMapping("/user")
-	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
+	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {         
             
-            
-                          
-
+                if (username=="SebasEdit") {
                 String token = getJWTToken(username);
 		User user = new User();
 		user.setUser(username);
 		user.setToken(token);		
-		return user;                   
+		return user;} else
+                {                                     
+                String token = "";
+		User user = new User();
+		user.setUser(username);
+		user.setToken(token);		
+		return user; }                     
+                
 		
 
 		
