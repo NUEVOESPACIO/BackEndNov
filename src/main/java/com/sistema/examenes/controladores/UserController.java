@@ -22,7 +22,7 @@ public class UserController {
         @PostMapping("/user")
 	public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {         
             
-                if (username=="SebasEdit") {
+                if ("SebasEdit".equals(username)) {
                 String token = getJWTToken(username);
 		User user = new User();
 		user.setUser(username);
